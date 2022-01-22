@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "panaderia";
   }
-  @Override
+ @Override
 protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(null);
 }
