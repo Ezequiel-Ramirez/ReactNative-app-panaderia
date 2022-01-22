@@ -8,7 +8,7 @@ const index = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <Text>Product Detail</Text>
-        <Button title="Go to Categories" onPress={() => navigation.navigate('Categories')} />
+        <Button title="Ir a Categorías" onPress={() => navigation.navigate('Categories')} />
       </View>
     </SafeAreaView>
   );
