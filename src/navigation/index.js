@@ -1,6 +1,3 @@
-/* eslint-disable prettier/prettier */
-// In App.js in a new project
-
 import Categories from '../screens/Categories/index';
 import { NavigationContainer } from '@react-navigation/native';
 import ProductDetail from '../screens/Product-detail/index';
@@ -20,6 +17,7 @@ const AppNavigation = () => {
             </Stack.Navigator>
         </NavigationContainer>
     );
-}
+};
+
 
 export default AppNavigation;

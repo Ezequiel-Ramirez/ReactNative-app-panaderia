@@ -1,7 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable quotes */
-/* eslint-disable prettier/prettier */
-
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
