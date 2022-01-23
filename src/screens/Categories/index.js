@@ -8,7 +8,7 @@ import styles from './style'
 
 const index = ({ navigation }) => {
   const handleSelectedCategory = (item) => {
-    navigation.navigate('Products', { categoryId: item.id, name: item.title, color: item.color });
+    navigation.navigate('Products', { categoryId: item.id, name: item.title, color: item.color});
   }
 
   const renderCategories = ({ item }) => {

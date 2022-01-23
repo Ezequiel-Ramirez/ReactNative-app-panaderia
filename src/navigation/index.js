@@ -26,9 +26,17 @@ const AppNavigation = () => {
                 <Stack.Screen
                     name='Products'
                     component={Products}
-                    options={({ route }) => ({ title: route.params.name, headerTitleAlign: 'center', headerStyle: { backgroundColor: route.params.color } })}
+                    options={({ route }) => ({ 
+                        title: route.params.name, 
+                        headerTitleAlign: 'center',
+                        headerStyle: { backgroundColor: route.params.color } })}
                 />
-                <Stack.Screen name='ProductDetail' component={ProductDetail} options={{ title: 'Detalle del Producto' }} />
+                <Stack.Screen 
+                name='ProductDetail' 
+                component={ProductDetail} 
+                options={({ route }) => ({
+                    title: route.params.name,
+                })} />
             </Stack.Navigator>
         </NavigationContainer>
     )
