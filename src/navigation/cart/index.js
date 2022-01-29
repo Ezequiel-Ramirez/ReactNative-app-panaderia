@@ -1,5 +1,6 @@
 import { COLORS } from '../../utils/constants/colors';
 import Cart from '../../screens/cart/index';
+import Orders from '../../screens/orders';
 import { Platform } from 'react-native';
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -17,8 +18,10 @@ const CartStackNavigation = () => {
                     headerTitleStyle: {
                         fontWeight: 'bold',
                     },
-                }}>
+                }}
+            >
                 <Stack.Screen name='Carrito' component={Cart}  />
+                <Stack.Screen name='Orders' component={Orders}  />
                
             </Stack.Navigator>
     )

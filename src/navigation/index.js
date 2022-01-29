@@ -22,10 +22,8 @@ const AppNavigation = () => {
                             tabBarIcon: ({ focused }) => (
                                 <Ionicons name='home' size={26} color={focused ? '#f4511e' : 'gray'} />
                             ),
-
                         }
                     } />
-
                 <BottomTabs.Screen
                     name='Cart'
                     component={CartStackNavigation}
@@ -34,7 +32,6 @@ const AppNavigation = () => {
                             tabBarIcon: ({ focused }) => (
                                 <Ionicons name='cart' size={26} color={focused ? '#f4511e' : 'gray'} />
                             ),
-
                         }
                     } />
             </BottomTabs.Navigator>
