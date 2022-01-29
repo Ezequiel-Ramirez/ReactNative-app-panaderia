@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 
 const CartStackNavigation = () => {
     return (
-            <Stack.Navigator initialRouteName='Cart'
+            <Stack.Navigator initialRouteName='Carrito'
                 screenOptions={{
                     headerStyle: {
                         backgroundColor: Platform.OS === 'android' ? COLORS.primary : '#f4511e',
@@ -18,7 +18,7 @@ const CartStackNavigation = () => {
                         fontWeight: 'bold',
                     },
                 }}>
-                <Stack.Screen name='Cart' component={Cart}  />
+                <Stack.Screen name='Carrito' component={Cart}  />
                
             </Stack.Navigator>
     )
