@@ -1,0 +1,35 @@
+import { Dimensions, StyleSheet } from "react-native";
+
+const { height } = Dimensions.get("window");
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        height: height / 4,
+        justifyContent: "center",
+        borderRadius: 6,
+        margin: 15,
+    },
+    containerTouchable: {
+        flex: 1,
+       
+    },
+    header: {
+        flex: 1,
+    },
+    name: {
+        fontFamily: "open-sans-bold",
+        fontSize: 20,
+        color: "black",
+        fontWeight: "bold",
+        backgroundColor: "red",
+    },
+    detail: {
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        flexWrap: "wrap",
+
+    },
+});
+export default styles;

@@ -1,13 +1,47 @@
-import { Text, View } from "react-native";
+import { FlatList, Text, TouchableOpacity, View } from "react-native";
 
-import React  from "react";
+import { CART } from '../../utils/data/cart';
+import CartItem from "../../components/cart-item";
+import React from "react";
 import styles from "./styles";
 
 const Cart = () => {
+    const items = CART;
+    const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+    const handleDelete = (id) => {
+        /* const newItems = items.filter(item => item.id !== id);
+        setItems(newItems); */
+        console.warn("Delete item", id);
+    };
+    const handleConfirm = () => {
+        console.warn("Confirm");
+    };
+
+    const renderItems = (data) => {
+        <CartItem item={data.item} onDelete={handleDelete} />
+    };
+
     return (
         <View style={styles.container}>
-            <Text>Cart</Text>
+            <View style={styles.list} >
+                <FlatList
+                    data={items}
+                    renderItem={renderItems}
+                    keyExtractor={item => item.id}
+                />
+            </View>
+            <View style={styles.footer}>
+                <TouchableOpacity style={styles.confirm} onPress={() => handleConfirm()} >
+                    <Text style={styles.text}>Confirmar</Text>
+                    <View style={styles.total}>
+                        <Text style={styles.text}>Total:</Text>
+                        <Text style={styles.text}>${total}</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
         </View>
+
     )
 }
 export default Cart;
