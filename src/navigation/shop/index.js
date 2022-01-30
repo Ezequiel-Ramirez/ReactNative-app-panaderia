@@ -1,6 +1,5 @@
 import { COLORS } from '../../utils/constants/colors';
 import Categories from '../../screens/categories/index';
-import { NavigationContainer } from '@react-navigation/native';
 import { Platform } from 'react-native';
 import ProductDetail from '../../screens/product-detail/index';
 import Products from '../../screens/products/index';
