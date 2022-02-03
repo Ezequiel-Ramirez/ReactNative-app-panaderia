@@ -1,44 +1,52 @@
 import {
-   FlatList,
-   SafeAreaView,
-   View,
+  FlatList,
+  SafeAreaView,
+  View,
 } from 'react-native';
+import React, {useEffect} from 'react';
+import { filterBreads, selectBread } from '../../store/action/bread.action';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { BREADS } from '../../utils/data/breads';
 import ProductItem from '../../components/products-item/index';
-import React from 'react';
 import styles from './style';
 
-const index = ({navigation, route}) => {
-  const breads = BREADS.filter(bread => bread.category === route.params.categoryId);
-
+const index = ({ navigation, route }) => {
+  const dispatch = useDispatch();
+  
+  const category = useSelector(state => state.categories.selected);
+  const categoryBreads = useSelector(state => state.breads.filteredBread);
   const handleSelectedProduct = (item) => {
-    navigation.navigate('ProductDetail', 
+    dispatch(selectBread(item.id));
+    navigation.navigate('ProductDetail',
       {
-        productId: item.id,
         name: item.name,
-        product: item, 
       }
     );
   }
 
-  const renderProducts= ({item}) => {
+  const renderProducts = ({ item }) => {
     return (
       <ProductItem item={item} onSelected={handleSelectedProduct} />
     )
   }
-   return (
+
+  useEffect(() => {
+    dispatch(filterBreads(category.id));
+  }, []);
+
+  return (
     <SafeAreaView style={styles.container}>
-    <View style={styles.container}>
-      <FlatList
-         data={breads}
-         renderItem={renderProducts}
-         keyExtractor={item => item.id}
-       />
-    </View>
-  </SafeAreaView>
-   );
- };
- 
+      <View style={styles.container}>
+        <FlatList
+          data={categoryBreads}
+          renderItem={renderProducts}
+          keyExtractor={item => item.id}
+        />
+      </View>
+    </SafeAreaView>
+  );
+};
+
 
 export default index;

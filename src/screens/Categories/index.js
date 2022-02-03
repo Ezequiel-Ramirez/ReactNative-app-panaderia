@@ -1,14 +1,19 @@
 import { Button, SafeAreaView, Text, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { CATEGORIES } from '../../utils/data/categories';
 import CategoryItem from '../../components/categories-item/index';
 import { FlatList } from 'react-native-gesture-handler';
 import React from 'react'
+import { selectCategory } from '../../store/action/category.action';
 import styles from './style'
 
 const index = ({ navigation }) => {
+  const categories = useSelector(state => state.categories.categories);
+  const dispatch = useDispatch();
+  
   const handleSelectedCategory = (item) => {
-    navigation.navigate('Products', { categoryId: item.id, name: item.title, color: item.color});
+    dispatch(selectCategory(item.id));
+    navigation.navigate('Products', {  name: item.title, color: item.color});
   }
 
   const renderCategories = ({ item }) => {
@@ -21,7 +26,7 @@ const index = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <FlatList
-          data={CATEGORIES}
+          data={categories}
           renderItem={renderCategories}
           keyExtractor={(item) => item.id}
         />

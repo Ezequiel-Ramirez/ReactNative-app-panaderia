@@ -1,4 +1,4 @@
-import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, View } from "react-native";
 
 import { ORDERS } from "../../utils/data/orders";
 import OrderItem from "../../components/order-item";
@@ -8,8 +8,8 @@ import styles from "./styles";
 const Orders = () => {
     const items = ORDERS;
 
-     const renderItems = (data) => (
-        <OrderItem item={data.item}  />
+    const renderItems = (data) => (
+        <OrderItem item={data.item} />
     )
     return (
         <View style={styles.container}>
