@@ -1,4 +1,4 @@
-import { GET_ORDERS } from "../action/order.action";
+import { GET_ORDERS, DELETE_ORDER } from "../action/order.action";
 
 const initialState = {
     orders: [],
@@ -10,6 +10,13 @@ const OrderReducer = (state = initialState, action) => {
             return {
                 ...state,
                 orders: action.orders,
+            };
+        case DELETE_ORDER:
+            return {
+                ...state,
+                orders: state.orders.filter(
+                    (order) => order.id !== action.orderId
+                ),
             };
         default:
             return state;
