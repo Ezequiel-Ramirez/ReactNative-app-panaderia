@@ -7,10 +7,16 @@ import {
 
 import React from 'react';
 import styles from './style';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addItem } from '../../store/action/cart.action';
 
 const index = ({ navigation, route }) => {
+  const dispatch = useDispatch();
   const bread = useSelector(state => state.breads.selected);
+
+  const handleAddItemCart = () => {
+    dispatch(addItem(bread));
+  }
   
   return (
     <SafeAreaView style={styles.container}>
@@ -19,6 +25,7 @@ const index = ({ navigation, route }) => {
         <Text>{bread.description}</Text>
         <Text>{bread.weight}</Text>
         <Text>$ {bread.price}</Text>
+        <Button title="Agregar al Carrito" onPress={() => handleAddItemCart()} />
       </View>
     </SafeAreaView>
   );
