@@ -4,7 +4,7 @@ import CartItem from "../../components/cart-item";
 import React from "react";
 import styles from "./styles";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItem } from "../../store/action/cart.action";
+import { removeItem, confirmCart } from "../../store/action/cart.action";
 
 const Cart = () => {
     const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const Cart = () => {
     const total = useSelector((state) => state.cart.total);
 
     const handleConfirm = () => {
-        console.warn("Confirmar compra");
+        dispatch(confirmCart(items, total));
     }
 
     const handleDelete = (id) => {

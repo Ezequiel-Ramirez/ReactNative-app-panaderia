@@ -18,9 +18,29 @@ export const removeItem = (itemId) => {
     }
 }
 
-export const confirmCart = () => {
-    return {
-        type: CONFIRM_ITEM,
-        payload
+export const confirmCart = (payload, total) => {
+    return async dispatch => {
+        try {
+            const response = await fetch(`${URL_API}/orders.json`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    date: Date.now(),
+                    items: payload,
+                    total: total,
+                })
+            });
+            const data = await response.json();
+            console.warn(data);
+                dispatch({
+                    type: CONFIRM_ITEM,
+                    confirm: true,
+                })
+           
+        } catch (error) {
+            console.warn(error);
+        }
     }
 }
