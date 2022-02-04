@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import BreadsReducer from './reducers/breads.reducer';
 import CategoryReducer from './reducers/category.reducer';
 import CartReducer from './reducers/cart-reducer';
+import OrderReducer from './reducers/order.reducer';
 
 const RootReducer = combineReducers({
     breads: BreadsReducer,
     categories: CategoryReducer,
-    cart: CartReducer
+    cart: CartReducer,
+    orders: OrderReducer,
 });
 
 export default createStore(RootReducer, applyMiddleware(thunk));
