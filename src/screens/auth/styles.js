@@ -1,17 +1,18 @@
 import { StyleSheet, Dimensions } from 'react-native';
-const {height, width} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
+
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F5FCFF',
-        alignItems: 'center',
         justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
     },
     containerCard: {
-       
-        height: height /2,
-        width: width * 0.7 ,
+        height: height / 1.6,
+        width: width * 0.7,
         backgroundColor: '#fff',
+        borderRadius: 10,
         padding: 20,
         shadowColor: '#000',
         shadowOffset: {
@@ -30,30 +31,23 @@ export const styles = StyleSheet.create({
     containerForm: {
         flex: 1,
     },
-    linkText: {
-        color: '#2e78b7',
-        fontSize: 16,
-        fontWeight: 'bold',
-        marginBottom: 15,
-        textAlign: 'center',
-    },
     label: {
-        fontSize: 16,
-        marginBottom: 8,
+        fontSize: 12,
+        marginBottom: 5,
         fontWeight: 'bold',
     },
     input: {
         borderBottomColor: '#ccc',
         borderBottomWidth: 1,
-        paddingHorizontal: 20,
-        fontSize: 16,
         color: '#333',
+        fontSize: 16,
         marginBottom: 15,
     },
-    buttonText: {
+    linkText: {
+        color: '#2e78b7',
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#5e78c1',
+        marginBottom: 20,
         textAlign: 'center',
     },
 });
