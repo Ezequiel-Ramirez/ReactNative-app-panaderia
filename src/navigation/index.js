@@ -4,6 +4,7 @@ import BottomTabsNavigator from './bottom-tab';
 import { useState } from 'react';
 import AuthNavigator from './auth';
 import { useSelector } from 'react-redux';
+import { ImageBackground } from 'react-native';
 
 
 

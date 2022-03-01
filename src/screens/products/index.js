@@ -1,9 +1,10 @@
 import {
   FlatList,
+  ImageBackground,
   SafeAreaView,
   View,
 } from 'react-native';
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { filterBreads, selectBread } from '../../store/action/bread.action';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -13,7 +14,7 @@ import styles from './style';
 
 const index = ({ navigation, route }) => {
   const dispatch = useDispatch();
-  
+
   const category = useSelector(state => state.categories.selected);
   const categoryBreads = useSelector(state => state.breads.filteredBread);
   const handleSelectedProduct = (item) => {
@@ -27,7 +28,9 @@ const index = ({ navigation, route }) => {
 
   const renderProducts = ({ item }) => {
     return (
-      <ProductItem item={item} onSelected={handleSelectedProduct} />
+     
+        <ProductItem item={item} onSelected={handleSelectedProduct} />
+   
     )
   }
 

@@ -5,12 +5,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         height: height /4,
-       justifyContent: "center",
+        justifyContent: "center",
         borderRadius: 6,
         margin:  15,
+       
     },
     containerTouchable: {
         flex: 1,
+        height: '100%',
         borderRadius: 6,
         shadowColor: "black",
         shadowOpacity: 0.26,
@@ -19,13 +21,23 @@ const styles = StyleSheet.create({
         elevation: 5,
         justifyContent: "center",
         alignItems: "center",
-        padding: 8,
+        
     },
     title: {
         fontFamily: "open-sans-bold",
-        fontSize: 18,
-        color: "white",
+        fontSize: 35,
+        color: "black",
         fontWeight: "bold",
+    },
+    containerImage: {
+        flex: 1,
+        width: '100%',
+        height: '80%',
+        justifyContent: "center",
+        alignItems: "center",
+        alignContent: "center",
+        marginTop: 35,
+        borderRadius: 6,
     },
 });
 export default styles;

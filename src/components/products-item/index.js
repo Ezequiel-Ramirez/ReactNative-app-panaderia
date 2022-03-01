@@ -1,12 +1,14 @@
-import { Text, TouchableOpacity, View } from 'react-native';
+import { ImageBackground, Text, TouchableOpacity, View } from 'react-native';
 
 import React from 'react'
 import styles from './style';
 
 const index = ({ item, onSelected }) => {
     return (
+            
         <TouchableOpacity style={styles.containerTouchable} onPress={() => onSelected(item)}>
-            <View style={styles.container }>
+
+            <View style={[styles.container, { backgroundColor: 'lightgrey' }] }>
                 <View>
                     <Text style={styles.name}>{item.name}</Text>
                 </View>
@@ -16,6 +18,7 @@ const index = ({ item, onSelected }) => {
                 </View>
             </View>
         </TouchableOpacity>
+            
     );
 };
 

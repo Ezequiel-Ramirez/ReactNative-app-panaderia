@@ -1,18 +1,18 @@
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View, ImageBackground } from 'react-native';
 
 import React from 'react'
 import styles from './style';
 
+
 const index = ({ item, onSelected }) => {
+    const image = item.img;
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={[styles.containerTouchable, { backgroundColor: item.color }]}
+            <TouchableOpacity style={styles.containerTouchable}
                 onPress={() => onSelected(item)}>
-
-                <View>
+                <ImageBackground source={require('../../../assets/harinaIntegral.png')} style={styles.containerImage}>
                     <Text style={styles.title}>{item.title}</Text>
-
-                </View>
+                </ImageBackground>
             </TouchableOpacity>
         </View>
     );

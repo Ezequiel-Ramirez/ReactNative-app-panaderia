@@ -5,7 +5,8 @@ export const BREADS = [
         name: 'Pan Baguette',
         description: 'Pan de baguette de trigo, con una capa de manteca',
         weight: '350g',
-        price: '1600'
+        price: '1600',
+        img: '../../../assets/harinaIntegral.jpg',
     },
     {
         id: '2',
@@ -13,7 +14,8 @@ export const BREADS = [
         name: 'Pan de trigo',
         description: 'Pan de trigo, con una capa de manteca',
         weight: '250g',
-        price: '1900'
+        price: '1900',
+        img: '../../../assets/harinaIntegral.jpg'
     },
     {
         id: '3',
@@ -21,7 +23,8 @@ export const BREADS = [
         name: 'Pan de arroz',
         description: 'Pan de arroz, con una capa de crocante de arroz',
         weight: '380g',
-        price: '1100'
+        price: '1100',
+        img: '../../../assets/harinaIntegral.jpg'
     },
     {
         id: '4',
@@ -29,7 +32,8 @@ export const BREADS = [
         name: 'Pan de maíz',
         description: 'Pan de maíz, con una capa de manteca',
         weight: '350g',
-        price: '3600'
+        price: '3600',
+        img: '../../../assets/harinaIntegral.jpg'
     },
     {
         id: '5',
@@ -37,7 +41,8 @@ export const BREADS = [
         name: 'Pan de soja',
         description: 'Pan de soja, con una capa de manteca',
         weight: '300g',
-        price: '2500'
+        price: '2500',
+        img: '../../../assets/harinaIntegral.jpg'
     },
     {
         id: '6',
@@ -45,6 +50,7 @@ export const BREADS = [
         name: 'Pan de arroz',
         description: 'Pan de Salvado, de ayer',
         weight: '250g',
-        price: '1900'
+        price: '1900',
+        img: '../../../assets/harinaIntegral.jpg'
     },
 ];
